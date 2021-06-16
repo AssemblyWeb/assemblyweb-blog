@@ -57,6 +57,6 @@ export default () =>
                 // .documentId('About')
             ),
           S.divider(),
-          ...S.documentTypeListItems().filter(item => !['aboutEn','aboutIt', 'aboutEs'].includes(item.getId()))
+          // ...S.documentTypeListItems().filter(item => !['aboutEn','aboutIt', 'aboutEs'].includes(item.getId()))
         ]
     )

@@ -1,3 +1,4 @@
+// not conected
 export default {
     name: 'pages',
     title: 'pages',

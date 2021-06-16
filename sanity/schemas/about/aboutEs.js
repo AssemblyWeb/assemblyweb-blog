@@ -1,5 +1,5 @@
 export default {
-    name: 'aboutES',
+    name: 'aboutEs',
     title: 'aboutEs',
     type: 'document',
     // icon: ()=> '⭐️',
