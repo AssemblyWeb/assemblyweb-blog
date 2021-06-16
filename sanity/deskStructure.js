@@ -1,9 +1,32 @@
 // /deskStructure.js
 import S from '@sanity/desk-tool/structure-builder'
 // import { GoBrowswer as GoHome } from 'react-icons/lib/go'
+import * as Structure from 'sanity-plugin-intl-input/lib/structure';
 
-export default () => 
-  S.list()
+// default implementation by re-exporting
+// export const getDefaultDocumentNode = Structure.getDefaultDocumentNode;
+// export default Structure.default;
+
+// or manual implementation to use with your own custom desk structure
+export const getDefaultDocumentNode = (props) => {
+    if (props.schemaType === 'article') {
+        return S.document().views(Structure.getDocumentNodeViewsForSchemaType(props.schemaType));
+    }
+    return S.document();
+};
+
+// export default () => {
+//   const items = Structure.getFilteredDocumentTypeListItems();
+//   return S.list()
+//       .id('__root__')
+//       .title('Content')
+//       .items(items);
+// };
+
+export default () => {
+  const items = Structure.getFilteredDocumentTypeListItems();
+  return S.list()
+    .id('__root__')
     .title('Content')
     .items(
         [
@@ -57,6 +80,6 @@ export default () =>
                 // .documentId('About')
             ),
           S.divider(),
-          ...S.documentTypeListItems().filter(item => !['aboutEn','aboutIt', 'aboutEs'].includes(item.getId()))
+          ...S.documentTypeListItems().filter(item => !['aboutEn'].includes(item.getId()))
         ]
-    )
+    )}
