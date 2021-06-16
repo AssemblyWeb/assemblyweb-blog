@@ -27,8 +27,8 @@ export default () =>
                             .child(
                               S.document()
                                 .title('About - ES')
-                                .schemaType('about')
-                                .documentId('about')
+                                .schemaType('aboutEs')
+                                .documentId('aboutEs')
                             ),
                             S.listItem()
                             .title('Italiano - IT')
@@ -36,8 +36,8 @@ export default () =>
                             .child(
                               S.document()
                                 .title('About - IT')
-                                .schemaType('about')
-                                .documentId('about')
+                                .schemaType('aboutIt')
+                                .documentId('aboutIt')
                             ),
                             S.listItem()
                             .title('English - EN')
@@ -45,8 +45,8 @@ export default () =>
                             .child(
                               S.document()
                                 .title('About - EN')
-                                .schemaType('about')
-                                .documentId('about')
+                                .schemaType('aboutEn')
+                                .documentId('aboutEn')
                             )
                         ])
                     ),
@@ -57,6 +57,6 @@ export default () =>
                 // .documentId('About')
             ),
           S.divider(),
-          ...S.documentTypeListItems().filter(item => !['about'].includes(item.getId()))
+          ...S.documentTypeListItems().filter(item => !['aboutEn','aboutIt', 'aboutEs'].includes(item.getId()))
         ]
     )
